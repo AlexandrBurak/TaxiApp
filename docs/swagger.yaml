@@ -1,0 +1,74 @@
+basePath: /
+definitions:
+  model.Login:
+    properties:
+      password:
+        type: string
+      phone:
+        type: string
+    required:
+    - password
+    - phone
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  title: UserService
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: login user
+      operationId: login-user
+      parameters:
+      - description: account info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.Login'
+      produces:
+      - application/json
+      responses: {}
+      summary: Login
+      tags:
+      - auth
+  /logout:
+    get:
+      consumes:
+      - application/json
+      description: logout user
+      operationId: logout-user
+      produces:
+      - application/json
+      responses: {}
+      summary: Logout
+      tags:
+      - auth
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: create user
+      operationId: create-user
+      parameters:
+      - description: account info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.Login'
+      produces:
+      - application/json
+      responses: {}
+      summary: Register
+      tags:
+      - auth
+securityDefinitions:
+  SignIn:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

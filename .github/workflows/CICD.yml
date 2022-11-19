@@ -1,0 +1,46 @@
+name: CICD
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.18.4'
+
+      - name: Install dependencies
+        run: |
+          go version
+          go get -u golang.org/x/lint/golint
+          go install golang.org/x/lint/golint@latest
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
+      
+
+      - name: Run build
+        run: | 
+          go build .
+          
+
+
+
+      - name: Run vet & lint
+        run: |
+          go vet .
+          golangci-lint run
+      
+
+      - name: Run testing
+        run: | 
+          cd internal/service/AuthService && go test -cover
+          go test -v
+
