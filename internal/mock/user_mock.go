@@ -8,8 +8,8 @@ import (
 	context "context"
 	reflect "reflect"
 
+	model "github.com/AlexandrBurak/TaxiApp/internal/model"
 	gomock "github.com/golang/mock/gomock"
-	model "github.com/zxcghoulhunter/InnoTaxi/internal/model"
 )
 
 // MockRepository is a mock of Repository interface.

@@ -2,9 +2,10 @@ package AuthService
 
 import (
 	"context"
+	"github.com/AlexandrBurak/TaxiApp/internal/config"
+	"github.com/dgrijalva/jwt-go"
 	"time"
 
-	"github.com/AlexandrBurak/TaxiApp/internal/config"
 	"github.com/AlexandrBurak/TaxiApp/internal/model"
 )
 

@@ -3,6 +3,8 @@ package cache
 import (
 	"context"
 
+	"github.com/go-redis/redis/v8"
+
 	"github.com/AlexandrBurak/TaxiApp/internal/config"
 
 	"github.com/AlexandrBurak/TaxiApp/internal/model"
