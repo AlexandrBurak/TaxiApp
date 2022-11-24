@@ -4,9 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/config"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/model"
+	"github.com/AlexandrBurak/TaxiApp/internal/config"
+	"github.com/AlexandrBurak/TaxiApp/internal/model"
 )
 
 type Claims struct {

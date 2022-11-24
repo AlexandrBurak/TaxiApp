@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/AlexandrBurak/TaxiApp/internal/mock"
+	"github.com/AlexandrBurak/TaxiApp/internal/model"
 	"github.com/golang/mock/gomock"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/mock"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/model"
 )
 
 func TestService_Save(t *testing.T) {

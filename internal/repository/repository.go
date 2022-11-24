@@ -4,10 +4,10 @@ import (
 	"context"
 	"database/sql"
 
+	"github.com/AlexandrBurak/TaxiApp/internal/config"
+	"github.com/AlexandrBurak/TaxiApp/internal/model"
 	_ "github.com/lib/pq"
 	"github.com/pressly/goose"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/config"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/model"
 )
 
 type Repository struct {

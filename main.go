@@ -4,21 +4,21 @@ import (
 	"log"
 	_ "net/http"
 
+	_ "github.com/AlexandrBurak/TaxiApp/docs"
+	"github.com/AlexandrBurak/TaxiApp/internal/cache"
+	"github.com/AlexandrBurak/TaxiApp/internal/config"
+	"github.com/AlexandrBurak/TaxiApp/internal/handlers"
+	"github.com/AlexandrBurak/TaxiApp/internal/logger"
+	"github.com/AlexandrBurak/TaxiApp/internal/middleware"
+	_ "github.com/AlexandrBurak/TaxiApp/internal/migrations"
+	"github.com/AlexandrBurak/TaxiApp/internal/repository"
+	"github.com/AlexandrBurak/TaxiApp/internal/service/AuthService"
 	"github.com/chenjiandongx/ginprom"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	_ "github.com/zxcghoulhunter/InnoTaxi/docs"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/cache"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/config"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/handlers"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/logger"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/middleware"
-	_ "github.com/zxcghoulhunter/InnoTaxi/internal/migrations"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/repository"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/service/AuthService"
 )
 
 //@title UserService
@@ -28,9 +28,9 @@ import (
 //@host localhost:8080
 //@BasePath /
 
-//@securityDefinitions.apikey SignIn
-//@in header
-//@name Authorization
+// @securityDefinitions.apikey SignIn
+// @in header
+// @name Authorization
 func main() {
 	logger, err := logger.NewLogger()
 	if err != nil {

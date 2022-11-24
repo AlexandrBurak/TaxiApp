@@ -1,4 +1,4 @@
-module github.com/zxcghoulhunter/InnoTaxi
+module github.com/AlexandrBurak/TaxiApp
 
 go 1.18
 

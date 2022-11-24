@@ -6,10 +6,10 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/zxcghoulhunter/InnoTaxi/internal/cache"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/logger"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/model"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/repository"
+	"github.com/AlexandrBurak/TaxiApp/internal/cache"
+	"github.com/AlexandrBurak/TaxiApp/internal/logger"
+	"github.com/AlexandrBurak/TaxiApp/internal/model"
+	"github.com/AlexandrBurak/TaxiApp/internal/repository"
 )
 
 type Repository interface {

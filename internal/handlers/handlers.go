@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/AlexandrBurak/TaxiApp/internal/model"
+	"github.com/AlexandrBurak/TaxiApp/internal/service/AuthService"
 	"github.com/gin-gonic/gin"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/model"
-	"github.com/zxcghoulhunter/InnoTaxi/internal/service/AuthService"
 )
 
 type Handler struct {
@@ -17,15 +17,15 @@ func NewHandler(service AuthService.Service) Handler {
 	return Handler{service: service}
 }
 
-//@Summary Register
-//@Tags auth
-//@Description create user
-//@ID create-user
-//@Accept json
-//@Produce json
-//@Param input body model.Login true "account info"
-//@Router /register [post]
-//@Success 200 {string}
+// @Summary Register
+// @Tags auth
+// @Description create user
+// @ID create-user
+// @Accept json
+// @Produce json
+// @Param input body model.Login true "account info"
+// @Router /register [post]
+// @Success 200 {string}
 func (h *Handler) Register(c *gin.Context) {
 	var user model.User
 	err := c.ShouldBindJSON(&user)
@@ -46,15 +46,15 @@ func (h *Handler) Register(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"user": user.Phone})
 }
 
-//@Summary Login
-//@Tags auth
-//@Description login user
-//@ID login-user
-//@Accept json
-//@Produce json
-//@Param input body model.Login true "account info"
-//@Router /login [post]
-//@Success 200 {string}
+// @Summary Login
+// @Tags auth
+// @Description login user
+// @ID login-user
+// @Accept json
+// @Produce json
+// @Param input body model.Login true "account info"
+// @Router /login [post]
+// @Success 200 {string}
 func (h *Handler) Login(c *gin.Context) {
 	var user model.Login
 	err := c.ShouldBindJSON(&user)
@@ -75,14 +75,14 @@ func (h *Handler) Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"user": user.Phone})
 }
 
-//@Summary Logout
-//@Tags auth
-//@Description logout user
-//@ID logout-user
-//@Accept json
-//@Produce json
-//@Router /logout [get]
-//@Success 200  {string}
+// @Summary Logout
+// @Tags auth
+// @Description logout user
+// @ID logout-user
+// @Accept json
+// @Produce json
+// @Router /logout [get]
+// @Success 200  {string}
 func (h *Handler) Logout(c *gin.Context) {
 	c.SetCookie("token", "", -1, "/", "localhost", false, true)
 	c.JSON(http.StatusOK, gin.H{"Status": "logout"})

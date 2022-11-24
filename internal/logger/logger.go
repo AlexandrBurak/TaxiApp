@@ -11,7 +11,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 
-	"github.com/zxcghoulhunter/InnoTaxi/internal/config"
+	"github.com/AlexandrBurak/TaxiApp/internal/config"
 )
 
 type Logger struct {
